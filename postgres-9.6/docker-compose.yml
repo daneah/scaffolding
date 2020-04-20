@@ -4,9 +4,11 @@ services:
     container_name: postgres-9.6
     restart: always
     image: postgres:9.6
-    environment:
-      POSTGRES_PASSWORD: 'password'
+    env_file:
+      - ./.env.postgresql
     ports:
       - '5432:5432'
     volumes:
-      - ./postgresdata:/var/lib/postgresql
+      - postgresqldata:/var/lib/postgresql/data
+volumes:
+  postgresqldata:

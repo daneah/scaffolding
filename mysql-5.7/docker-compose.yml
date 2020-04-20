@@ -4,9 +4,11 @@ services:
     container_name: mysql-5.7
     restart: always
     image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: 'password'
+    env_file:
+      - ./.env.mysql
     ports:
       - "3306:3306"
     volumes:
-      - ./mysqldata:/var/lib/mysql
+      - mysqldata:/var/lib/mysql
+volumes:
+  mysqldata:

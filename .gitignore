@@ -1,2 +1,1 @@
-mysql-5.7/mysqldata
-postgres-9.6/postgresdata
+**/.env.*
